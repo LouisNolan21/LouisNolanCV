@@ -75,9 +75,20 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60vh; /* Was 40 */
-    background: url("../images/img6.JPEG") no-repeat center center/cover;
-    z-index: -1; /* Moves background behind everything */
+    height: 60vh; /* Adjusts height dynamically */
+    background: url("../images/img6.JPEG") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Helps with parallax effect on large screens */
+    z-index: -1; /* Keeps it behind content */
+}
+
+/* 📱 Mobile Optimization */
+@media screen and (max-width: 768px) {
+    .background {
+        height: 100vh; /* Full height on mobile */
+        background-size: contain; /* Ensures full image visibility */
+        background-attachment: scroll; /* Fixes issues with fixed backgrounds on mobile */
+    }
 }
 
 /* Main Content Container */
